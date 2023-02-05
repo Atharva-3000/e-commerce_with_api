@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import bannerImg from "./banner.jpg";
 import "./Banner.css";
-// import ColorSchemesExample from "./navbar";
-import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
+import { Navbar, Nav} from 'react-bootstrap';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -37,7 +36,6 @@ const Banner = () => {
       (product) => product.category === category
     );
   }
-  // console.log("after filter: ", filteredProducts);
 
   if (filteredProducts) {
     if (search) {
@@ -49,7 +47,6 @@ const Banner = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setSearch(e.target.value);
-    // handleSearch(e);
   };
   return (
     <div className="banner">
