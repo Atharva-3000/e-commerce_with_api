@@ -54,29 +54,15 @@ const Banner = () => {
   return (
     <div className="banner">
       <img className="ban_photo" src={bannerImg} alt="banner" />
-      <h1 className="website-name">Shop-LIFT</h1>
-      {/* <nav className="navbar">
-        <div className="navbar-container">
-          <ul className="navbar-list">
-            <li className="navbar-item">HOME</li>
-            <li className="navbar-item">ACCOUNT</li>
-            <li className="navbar-item">CONTACT US</li>
-            <li className="navbar-item">ABOUT US</li>
-            <li>
-              <FontAwesomeIcon icon="fa-regular fa-cart-shopping" />
-            </li>
-          </ul>
-        </div>
-      </nav> */}
+      <h1 className="website-name">ShopLIFT</h1>
       <Navbar bg="light" expand="lg">
-  {/* <Navbar.Brand href="#home">Shop-LIFT</Navbar.Brand> */}
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
-      <Nav.Link href="#home">Home</Nav.Link>
-      <Nav.Link href="#news">News</Nav.Link>
+      <Nav.Link href="#home">HOME</Nav.Link>
+      <Nav.Link href="#news">OFFERS</Nav.Link>
       <Nav.Link href="#contact">Contact</Nav.Link>
-      <Nav.Link href="#about">About</Nav.Link>
+      <Nav.Link href="#about">Cart</Nav.Link>
     </Nav>
   </Navbar.Collapse>
 </Navbar>
