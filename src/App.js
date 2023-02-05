@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import bannerImg from "./banner.jpg";
 import "./Banner.css";
+// import ColorSchemesExample from "./navbar";
+import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -46,14 +48,14 @@ const Banner = () => {
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSearch(e.target.value)
+    setSearch(e.target.value);
     // handleSearch(e);
   };
   return (
     <div className="banner">
       <img className="ban_photo" src={bannerImg} alt="banner" />
       <h1 className="website-name">Shop-LIFT</h1>
-      <nav className="navbar">
+      {/* <nav className="navbar">
         <div className="navbar-container">
           <ul className="navbar-list">
             <li className="navbar-item">HOME</li>
@@ -61,11 +63,24 @@ const Banner = () => {
             <li className="navbar-item">CONTACT US</li>
             <li className="navbar-item">ABOUT US</li>
             <li>
-              {/* <FontAwesomeIcon icon="fa-regular fa-cart-shopping" /> */}
+              <FontAwesomeIcon icon="fa-regular fa-cart-shopping" />
             </li>
           </ul>
         </div>
-      </nav>
+      </nav> */}
+      <Navbar bg="light" expand="lg">
+  {/* <Navbar.Brand href="#home">Shop-LIFT</Navbar.Brand> */}
+  <Navbar.Toggle aria-controls="basic-navbar-nav" />
+  <Navbar.Collapse id="basic-navbar-nav">
+    <Nav className="mr-auto">
+      <Nav.Link href="#home">Home</Nav.Link>
+      <Nav.Link href="#news">News</Nav.Link>
+      <Nav.Link href="#contact">Contact</Nav.Link>
+      <Nav.Link href="#about">About</Nav.Link>
+    </Nav>
+  </Navbar.Collapse>
+</Navbar>
+
       <div className="filter">
         <select value={category} onChange={handleCategory}>
           <option value="all">All</option>
@@ -95,18 +110,24 @@ const Banner = () => {
         />
       </div>
       <div className="product-list">
-      {filteredProducts.length > 0 ? (
-        filteredProducts.map((product) => (
-          <div key={product.id} className="product">
-            <img className="pro_img" src={product.image} alt={product.title} />
-            <span>
-              <h3>{product.title}</h3>
-              <p>{product.category}</p>
-              <p>${product.price}</p>
-            </span>
-          </div>
-        ))
-      ):(<p>NO PRODUCTS FOUND, PLEASE CHECK</p>)}
+        {filteredProducts.length > 0 ? (
+          filteredProducts.map((product) => (
+            <div key={product.id} className="product">
+              <img
+                className="pro_img"
+                src={product.image}
+                alt={product.title}
+              />
+              <span>
+                <h3>{product.title}</h3>
+                <p>{product.category}</p>
+                <p>${product.price}</p>
+              </span>
+            </div>
+          ))
+        ) : (
+          <p>NO PRODUCTS FOUND, PLEASE CHECK</p>
+        )}
       </div>
     </div>
   );

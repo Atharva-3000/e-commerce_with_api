@@ -162,26 +162,73 @@ transition: 0.4s;
     top: 0;
     left: 0;
     right: 0;
+    z-index: 1;
   }
-  .navbar {
+  /* .navbar {
     position: absolute;
     top: 0;
     width: 100%;
     background-color: white;
     z-index: 1;
+  } */
+  .topnav {
+    background-color: #333;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Add an active class to highlight the current page */
+  .topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+  /* Hide the link that should open and close the topnav on small screens */
+  .topnav .icon {
+    display: none;
   }
   .navbar ul{
     list-style-type: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+  padding: 10;
   margin: 0;
+  }
+  @media (max-width: 700px) {
+    .navbar-container {
+      display: flex;
+      justify-content: space-between;
+    }
+    .navbar-list {
+      display: flex;
+      flex-direction: row;
+    }
   }
   .navbar li {
     display: inline-block;
     margin-right: 50px;
     flex-direction:row; 
+    float: none;
   }
   .navbar-list{
     display: flex;
@@ -194,11 +241,9 @@ transition: 0.4s;
     color: black;
   }
   
-  nav li:hover {
-    color: brown;
-    transform: 0.2s;
-    font-size: large;
-    cursor: pointer;
+  /*  */
+  .left-align{
+    text-align: left;
   }
   .faicons{
     color: white;
