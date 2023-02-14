@@ -58,8 +58,8 @@ const Banner = () => {
     <Nav className="mr-auto">
       <Nav.Link href="#home">HOME</Nav.Link>
       <Nav.Link href="#news">OFFERS</Nav.Link>
-      <Nav.Link href="#contact">Contact</Nav.Link>
-      <Nav.Link href="#about">Cart</Nav.Link>
+      <Nav.Link href="#contact">CONTACT</Nav.Link>
+      <Nav.Link href="#about">CART</Nav.Link>
     </Nav>
   </Navbar.Collapse>
 </Navbar>
